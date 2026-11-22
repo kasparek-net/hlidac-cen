@@ -3,7 +3,7 @@
 // @name:en      Price history for Czech shops
 // @namespace    https://github.com/kasparek-net
 // @description  Lightweight price history on Czech and Slovak shops using the public Hlídač Shopů API.
-// @version      2.1
+// @version      2.2
 // @license      MIT
 // @homepageURL  https://github.com/kasparek-net/hlidac-cen
 // @updateURL    https://raw.githubusercontent.com/kasparek-net/hlidac-cen/main/hlidac-cen.user.js
@@ -70,7 +70,10 @@
   const INLINE = ['.price-detail__price-box-wrapper', '.price-detail__buy-actions'];
   let lastUrl = null;
 
-  const pageUrl = () => location.href.split('#')[0];
+  const pageUrl = () => {
+    const dq = location.hostname.includes('alza.') && new URLSearchParams(location.search).get('dq');
+    return location.origin + location.pathname + (dq ? `?dq=${encodeURIComponent(dq)}` : '');
+  };
   const fmt = n => typeof n !== 'number' ? '–' : `${n.toLocaleString('cs-CZ', { maximumFractionDigits: 2 })} ${cur}`;
   const fmtDate = s => s ? new Date(s).toLocaleDateString('cs-CZ') : '–';
   const pct = d => typeof d !== 'number' ? null : Math.round(d * 100);

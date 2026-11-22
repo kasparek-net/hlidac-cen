@@ -38,7 +38,7 @@ Pokud máte nainstalované rozšíření Hlídač Shopů, vypněte ho, ať se na
 
 ## Soukromí
 
-Skript posílá na `api.hlidacshopu.cz` jen adresu stránky, na které jste, a to jen v podporovaných obchodech. Nic dalšího neodesílá a nic neukládá.
+Skript posílá na `api.hlidacshopu.cz` jen adresu stránky v podporovaném obchodě, a to bez parametrů za otazníkem (hledané výrazy, sledovací kódy apod. se neposílají). Výjimkou je parametr `dq` na Alze, který u některých odkazů určuje produkt. Nic dalšího skript neodesílá a nic neukládá.
 
 ## Poznámka
 
