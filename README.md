@@ -27,7 +27,7 @@ Na Alze se box vloží přímo vedle ceny. V ostatních obchodech je to plovouc�
    - **Safari** (Mac, iPhone, iPad): [Userscripts](https://apps.apple.com/app/userscripts/id1463298887). Zapněte rozšíření v Safari → Nastavení → Rozšíření a povolte ho pro všechny weby.
    - **Chrome, Edge, Brave**: [Tampermonkey](https://www.tampermonkey.net/) nebo [Violentmonkey](https://violentmonkey.github.io/). V Chromu navíc v podrobnostech rozšíření (`chrome://extensions`) zapněte **Povolit uživatelské skripty**.
    - **Firefox**: [Tampermonkey](https://www.tampermonkey.net/) nebo [Violentmonkey](https://violentmonkey.github.io/).
-2. Otevřete skript:
+2. Otevřete skript na [Greasy Fork](https://greasyfork.org/cs/scripts/606886-hl%C3%ADda%C4%8D-cen) a klikněte na **Nainstalovat skript**, nebo ho otevřete přímo z GitHubu:
 
    https://raw.githubusercontent.com/kasparek-net/hlidac-cen/main/hlidac-cen.user.js
 

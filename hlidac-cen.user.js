@@ -3,7 +3,8 @@
 // @name:en      Price history for Czech shops
 // @namespace    https://github.com/kasparek-net
 // @description  Lightweight price history on Czech and Slovak shops using the public Hlídač Shopů API.
-// @version      2.3
+// @description:cs Historie cen za poslední rok, běžná cena a skutečná sleva na Alze, Datartu, Mallu, Notinu a dalších českých a slovenských e‑shopech. Data z Hlídače Shopů.
+// @version      2.3.1
 // @license      MIT
 // @homepageURL  https://github.com/kasparek-net/hlidac-cen
 // @updateURL    https://raw.githubusercontent.com/kasparek-net/hlidac-cen/main/hlidac-cen.user.js
