@@ -6,7 +6,7 @@ Je to lehká náhrada rozšíření Hlídač Shopů. Má pár kilobajtů, nic ne
 
 | Alza (vedle ceny) | Ostatní obchody (panel vlevo dole) |
 | --- | --- |
-| ![Historie cen na Alze](screenshots/alza.png) | ![Plovoucí panel](screenshots/panel.jpg) |
+| ![Historie cen na Alze](https://raw.githubusercontent.com/kasparek-net/hlidac-cen/main/screenshots/alza.png) | ![Plovoucí panel](https://raw.githubusercontent.com/kasparek-net/hlidac-cen/main/screenshots/panel.jpg) |
 
 ## Co ukazuje
 
