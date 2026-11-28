@@ -15,7 +15,7 @@ Je to lehká náhrada rozšíření Hlídač Shopů. Má pár kilobajtů, nic ne
 - **Graf ceny** za posledních 365 dní s nejnižší a nejvyšší cenou.
 - Datum poslední slevy a posledního zdražení.
 
-Na Alze se box vloží přímo vedle ceny. V ostatních obchodech je to plovoucí panel vlevo dole, který jde sbalit šipkou ▾. Tmavý režim se řídí systémem. Na stránkách bez produktu, nebo když Hlídač Shopů produkt nezná, se nezobrazí nic.
+Na Alze a Lidlu se box vloží přímo do stránky k ceně. V ostatních obchodech je to plovoucí panel vlevo dole, který jde sbalit šipkou ▾. Tmavý režim se řídí systémem. Na stránkách bez produktu, nebo když Hlídač Shopů produkt nezná, se nezobrazí nic.
 
 ![Panel v tmavém režimu](https://raw.githubusercontent.com/kasparek-net/hlidac-cen/main/screenshots/panel-dark.png)
 

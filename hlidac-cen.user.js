@@ -4,7 +4,7 @@
 // @namespace    https://github.com/kasparek-net
 // @description  Lightweight price history on Czech and Slovak shops using the public Hlídač Shopů API.
 // @description:cs Historie cen za poslední rok, běžná cena a skutečná sleva na Alze, Datartu, Mallu, Notinu a dalších českých a slovenských e‑shopech. Data z Hlídače Shopů.
-// @version      2.3.1
+// @version      2.4.0
 // @license      MIT
 // @homepageURL  https://github.com/kasparek-net/hlidac-cen
 // @updateURL    https://raw.githubusercontent.com/kasparek-net/hlidac-cen/main/hlidac-cen.user.js
@@ -72,8 +72,10 @@
 
   const BOX_ID = 'aph-box';
   const cur = location.hostname.endsWith('.sk') ? '€' : 'Kč';
-  const INLINE = ['.price-detail__row', '.price-detail__buy-actions'];
+  const INLINE = ['.price-detail__row', '.price-detail__buy-actions', '.cart-section-one'];
+  const findAnchor = () => INLINE.map(s => document.querySelector(s)).find(Boolean);
   let lastUrl = null;
+  let inlineBox = null;
 
   const pageUrl = () => {
     const dq = location.hostname.includes('alza.') && new URLSearchParams(location.search).get('dq');
@@ -204,8 +206,13 @@
 
   async function run() {
     const url = pageUrl();
-    if (url === lastUrl) return;
+    if (url === lastUrl) {
+      // Shops that re-render the product block throw the box away with it.
+      if (inlineBox && !inlineBox.isConnected) findAnchor()?.after(inlineBox);
+      return;
+    }
     lastUrl = url;
+    inlineBox = null;
     document.getElementById(BOX_ID)?.remove();
 
     let json;
@@ -217,12 +224,13 @@
     if (url !== pageUrl() || !json.data?.currentPrice?.some(p => typeof p.y === 'number')) return;
 
     document.getElementById(BOX_ID)?.remove();
-    const anchor = INLINE.map(s => document.querySelector(s)).find(Boolean);
+    const anchor = findAnchor();
     const box = document.createElement('div');
     box.id = BOX_ID;
     box.innerHTML = render(json, !anchor, url);
     if (anchor) {
       anchor.after(box);
+      inlineBox = box;
     } else {
       box.classList.add('aph-float');
       box.addEventListener('click', e => {
